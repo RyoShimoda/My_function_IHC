@@ -61,10 +61,10 @@ https://github.com/user-attachments/assets/c3727a3b-9d31-4272-a051-3b4cc4a378ff
 ## 関数の詳細
 
 | 引数名 | デフォルト値 | 説明 |
-| :--- | :---: | ---: |
-| `Folder_name` | "" | データセットが入っているフォルダ名 |
-| `Region_list`| (必須) | 領域名のリスト。自身でリストを作り指定 (例: PFCList = c("PL", "IL")) |
-| `Path` | (必須) | データセットが入っているフォルダまでのpathを指定 |
+| :--- | :---: | :--- |
+| `Folder_name` | "" | ここで指定したフォルダにResultsフォルダを生成し、グラフを保存 |
+| `Region_list`| (必須) | 領域名のリスト。自身でリストを作り指定 (例: PFCList <- c("PL", "IL")) |
+| `Path` | (必須) | データファイルが入っているフォルダまでのpathを指定 |
 | `Red_name` | "RED" | 赤色の細胞の名前 |
 | `Green_name` | "GREEN" | 緑色の細胞の名前 |
 | `PFC` | "F" | PFCの場合は PFC = "" のように指定 |
@@ -72,7 +72,7 @@ https://github.com/user-attachments/assets/c3727a3b-9d31-4272-a051-3b4cc4a378ff
 | `number_of_region` | 9 | PFCの場合は number_of_region = 2 のように指定 |
 &#8942;
 
-よく使う引数は上記の通りです。この関数はデフォルトが海馬解析用の引数が指定されています。使用例の動画はPFCのデータを解析しています。データセットのフォルダに作業ディレクトリを指定していないため、Folder_name = "Demo"と指定し、赤色がc-Fos、緑色がNeuNを表しているので、Red_name = "c-Fos"、Green_name = "NeuN"と指定し、グラフに描画される領域の数が二つと少ないので、それぞれ引数でグラフの縦横の幅を指定しています。<br>
+よく使う引数は上記の通りです。この関数はデフォルトで海馬解析用の引数が指定されています。使用例の動画はPFCのデータを解析しています。データセットのフォルダに作業ディレクトリを指定していないため、Folder_name = "Demo"と指定し、赤色がc-Fos、緑色がNeuNを表しているので、Red_name = "c-Fos"、Green_name = "NeuN"と指定し、グラフに描画される領域の数が二つと少ないので、それぞれ引数でグラフの縦横の幅を指定しています。<br>
 海馬の解析では以下のような最短コードで実行できます。引数ではその他、群の名前、グラフの各線やテキストの大きさ、群の色などは個別に指定できます。
 ```R
 # データセットが入っているフォルダを作業ディレクトリにしている場合はfolder_nameも省略可能
@@ -82,6 +82,11 @@ Region_Hippocampus <- c("dDGsp", "dDGip", "dCA3", "dCA2", "dCA1", "vDGsp", "vDGi
 mf_IHC(Region_list = Region_Hippocampus, Path = "パス")
 ```
 群の名前は (Shimoda _et al_., 2024) のとおり安静群はSED、低強度運動群はLIEとしているので、引数のデフォルトは統制群がSED = "SED"、処理群がLIE  ="LIE"として指定されていますが、群の名前を変える場合は統制群をSED  ="Control"、処理群をLIE = "EXE"等と変更してください。その場合、graphic_reference = "(統制群の名前)"の引数も追加してください。ただ、上記の使用例の箇所でも言及しているとおり、データファイルの名前にその群の名前を入れてください。また、群ごとの色分けも引数で変更可能です。
+
+## 活用実績
+この関数は以下の論文、リポジトリでのデータ解析に活用されています。
+- Article: [Regular light-intensity exercise accelerates contextual fear extinction with reduced dorsal CA3 activation in male rats. Neurochemistry International,Volume 198,2026,106191](https://www.sciencedirect.com/science/article/pii/S0197018626000823?via%3Dihub)<br>
+Repository: [Analyse_Neurochem.-Int.](https://github.com/RyoShimoda/Analyse_Neurochem.-Int.)
 
 ## 動作環境
 
