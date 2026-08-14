@@ -1,4 +1,4 @@
-# My Function Immunohistochemistry cFos
+# My Function Immunohistochemistry
 
 mf_IHC <- function(Folder_name = "", Path, File_type = "csv", 
                          Red_name = "RED", Green_name = "GREEN", Blue_name = "BLUE",
