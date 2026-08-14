@@ -26,7 +26,7 @@ GitHubからスクリプトファイルを読み込むことで関数が利用�
 
 ```R
 # GitHubから直接スクリプトを読み込む
-source("https://github.com/RyoShimoda/My_function_IHC/blob/main/MF_IHC.R")
+source("https://raw.githubusercontent.com/RyoShimoda/My_function_IHC/main/MF_IHC.R")
 ```
 
 ## 使用例 
