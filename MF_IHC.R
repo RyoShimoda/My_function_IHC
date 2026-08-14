@@ -1,4 +1,4 @@
-# My Function Immunohistochemistry
+# My Function Immunohistochemistry 
 
 mf_IHC <- function(Folder_name = "", Path, File_type = "csv", 
                          Red_name = "RED", Green_name = "GREEN", Blue_name = "BLUE",
@@ -80,9 +80,9 @@ mf_IHC <- function(Folder_name = "", Path, File_type = "csv",
       dplyr::slice(5) %>%
       # dplyr::select(2,4,8) %>% 
       dplyr::select(2) %>% 
-      rename("Area" = "–ÊÏ") %>% 
-      # rename("LI" = "‹P“x..ÏŽZ.") %>% 
-      # rename("RI" = paste0(Aim_color, "..ÏŽZ.")) %>% 
+      rename("Area" = "é¢ç©") %>% 
+      # rename("LI" = "è¼åº¦..ç©ç®—.") %>% 
+      # rename("RI" = paste0(Aim_color, "..ç©ç®—.")) %>% 
       mutate(Area = as.numeric(Area)) %>% 
       # mutate(LI = as.numeric(LI)) %>% 
       # mutate(RI = as.numeric(RI)) %>% 
@@ -114,8 +114,8 @@ mf_IHC <- function(Folder_name = "", Path, File_type = "csv",
     tmp <- read.csv(rawdata, skip = 3, fileEncoding = "Shift-JIS") %>%
       dplyr::select(7, 11) %>% 
       dplyr::slice(1) %>% 
-      rename("LI" = "‹P“x..•½‹Ï.") %>% 
-      rename("RI" = paste0(Aim_color, "..•½‹Ï.")) %>% 
+      rename("LI" = "è¼åº¦..å¹³å‡.") %>% 
+      rename("RI" = paste0(Aim_color, "..å¹³å‡.")) %>% 
       mutate(LI = as.numeric(LI)) %>% 
       mutate(RI = as.numeric(RI)) %>% 
       mutate(No = name) %>% 
@@ -129,8 +129,8 @@ mf_IHC <- function(Folder_name = "", Path, File_type = "csv",
     name <- gsub(paste0("_", Region), "", namestmp[i])
     tmp <- read.csv(rawdata, skip = 10, fileEncoding = "Shift-JIS") %>% 
       dplyr::select(5, 7) %>% 
-      rename("Luminance Max" = "‹P“x..Å‘å.") %>% 
-      rename("Luminance Mean" = "‹P“x..•½‹Ï.") %>% 
+      rename("Luminance Max" = "è¼åº¦..æœ€å¤§.") %>% 
+      rename("Luminance Mean" = "è¼åº¦..å¹³å‡.") %>% 
       mutate("Luminance Max" = as.numeric(`Luminance Max`)) %>% 
       mutate("Luminance Mean" = as.numeric(`Luminance Mean`)) %>% 
       mutate(No = name) %>% 
