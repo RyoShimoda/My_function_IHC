@@ -1068,10 +1068,10 @@ mf_IHC <- function(Folder_name = "", Path, File_type = "csv",
                 meanArea = mean(Area),
                 meanLI = mean(LI),
                 meanRI = mean(RI),
-                seCount = sd(Count)/sqrt(n()-1),
-                seArea = sd(Area)/sqrt(n()-1),
-                seLI = sd(LI)/sqrt(n()-1),
-                seRI = sd(RI)/sqrt(n()-1)) %>% 
+                seCount = sd(Count)/sqrt(n()),
+                seArea = sd(Area)/sqrt(n()),
+                seLI = sd(LI)/sqrt(n()),
+                seRI = sd(RI)/sqrt(n())) %>% 
       mutate(Group = as.factor(Group)) %>%
       mutate(Region = as.factor(Region)) %>%
       mutate(Group = relevel(Group, ref = graphic_refference))
@@ -1150,10 +1150,10 @@ mf_IHC <- function(Folder_name = "", Path, File_type = "csv",
                 meanArea = mean(mArea),
                 meanLI = mean(mLI),
                 meanRI = mean(mRI),
-                seCount = sd(mCount)/sqrt(n()-1),
-                seArea = sd(mArea)/sqrt(n()-1),
-                seLI = sd(mLI)/sqrt(n()-1),
-                seRI = sd(mRI)/sqrt(n()-1)) %>% 
+                seCount = sd(mCount)/sqrt(n()),
+                seArea = sd(mArea)/sqrt(n()),
+                seLI = sd(mLI)/sqrt(n()),
+                seRI = sd(mRI)/sqrt(n())) %>% 
       mutate(Group = as.factor(Group)) %>%
       mutate(Group = relevel(Group, ref = graphic_refference))
     
